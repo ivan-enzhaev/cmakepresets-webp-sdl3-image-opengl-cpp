@@ -1,0 +1,51 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "win",
+      "displayName": "Windows MinGW (Release)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/dist/win",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_PREFIX_PATH": "C:/libs/glad-0.1.36/opengl-3.3;C:/libs/cglm-0.9.6;C:/libs/sdl3-3.4.20-mingw;C:/libs/sdl3_image-3.4.8-webp-mingw;C:/libs/webp-1.6.0-mingw"
+      }
+    },
+    {
+      "name": "win-debug",
+      "displayName": "Windows MinGW (Debug)",
+      "inherits": "win",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "linux",
+      "displayName": "Ubuntu Linux (Release)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/dist/linux",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_PREFIX_PATH": "$env{HOME}/libs/glad-0.1.36/opengl-3.3;$env{HOME}/libs/cglm-0.9.6;$env{HOME}/libs/sdl3-3.4.20-ubuntu;$env{HOME}/libs/sdl3_image-3.4.8-webp-ubuntu;$env{HOME}/libs/webp-1.6.0-ubuntu"
+      }
+    },
+    {
+      "name": "linux-debug",
+      "displayName": "Ubuntu Linux (Debug)",
+      "inherits": "linux",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "web",
+      "displayName": "Emscripten WebAssembly",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/dist/web",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_FIND_ROOT_PATH": "C:/libs/cglm-0.9.6;C:/libs/sdl3-3.4.20-wasm;C:/libs/sdl3_image-3.4.8-webp-wasm;C:/libs/webp-1.6.0-wasm"
+      }
+    }
+  ]
+}
