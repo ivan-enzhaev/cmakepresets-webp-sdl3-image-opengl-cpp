@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.21)
 
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
-    set(CMAKE_BUILD_TYPE "Debug" CACHE STRING "Choose build type") # or "Release"
+    set(CMAKE_BUILD_TYPE "Debug" CACHE STRING "Choose build type") # "Debug" or "Release"
 endif()
 
 project(cmakepresets-webp-sdl3-image-opengl-cpp LANGUAGES CXX C)
